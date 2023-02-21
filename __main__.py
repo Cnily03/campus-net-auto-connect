@@ -10,6 +10,7 @@ import re
 import json
 import datetime
 import hashlib
+from time import sleep
 
 __version__ = "1.0.0"
 LAUNCH_TIME = datetime.datetime.now()
@@ -219,3 +220,5 @@ def launch_via_argv():
 
 if __name__ == "__main__":
     launch_via_argv()
+    print("The window will be closed in 2 second...")
+    sleep(2)
