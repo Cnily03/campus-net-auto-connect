@@ -1,5 +1,6 @@
+import sys
 from src.cipher import decrypt
-from src.prompt import prompter
+from src.logger import Prompter
 from src.record import readconf, record
 from src.restful.net import login
 
@@ -14,9 +15,9 @@ def login_by_record():
             username, password = record()
             login(username, password)
     except KeyboardInterrupt:
-        exit()
+        sys.exit()
     except:
-        prompter.error("未知错误，登录失败！")
+        Prompter.error("未知错误！")
 
 
 def login_once():
@@ -24,6 +25,6 @@ def login_once():
         username, password = record(save=False)
         login(username, password)
     except KeyboardInterrupt:
-        exit()
+        sys.exit()
     except:
-        print("未知错误，登录失败！")
+        Prompter.warn("未知错误！")

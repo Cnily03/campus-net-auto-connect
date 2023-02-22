@@ -1,23 +1,23 @@
 import os
 import shutil
-import sys
 
 PROGRAM_NAME = "AutoConnect"
 directories = ["./src"]
 extensions = [".py"]
 files = ["config.py"]
-modules = ["json", "requests", "tkinter", "tkinter.messagebox",
+modules = ["json", "requests", "psutil", "tkinter", "tkinter.messagebox",
            "platform", "maskpass", "Crypto.Cipher.AES"]
 
 options = {
-    "onefile": True,
+    "onefile": False,
     "noconsole": False,
     "icon": os.path.abspath('./logo.ico'),
     "filename": PROGRAM_NAME
 }
 
 print("Generating requirements.txt ...")
-os.system("pipreqs ./ --encoding=utf8 --force")
+os.system("pipreqs . --encoding=utf8 --force")
+print("requirements.txt is updated")
 
 # --add-data
 

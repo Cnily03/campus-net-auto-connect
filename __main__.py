@@ -1,5 +1,6 @@
 from os import path, remove
 from sys import argv
+from src.logger import Prompter
 from src.restful import login_by_record, logout
 from config import *
 
@@ -29,16 +30,16 @@ def launch_via_argv():
     elif exec_type == "clear":
         if path.exists(CONFIG_FILE_PATH) and path.isfile(CONFIG_FILE_PATH):
             remove(CONFIG_FILE_PATH)
-            print("已清除")
+            Prompter.info("已清除")
         else:
-            print("没有要清除的身份信息")
+            Prompter.warn("没有要清除的身份信息")
     elif exec_type == "reset":
         if path.exists(CONFIG_FILE_PATH) and path.isfile(CONFIG_FILE_PATH):
             remove(CONFIG_FILE_PATH)
-            print("已清除")
+            Prompter.info("已清除")
         else:
-            print("没有要清除的身份信息")
-        logout(is_print=False)
+            Prompter.warn("没有要清除的身份信息")
+        logout(is_give_result=False)
     elif exec_type == "version":
         print('\n'.join([
             "{}".format(__version__)

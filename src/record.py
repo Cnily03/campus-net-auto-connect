@@ -1,6 +1,7 @@
+import sys
 import maskpass
 
-from src.prompt import prompter
+from .logger import Prompter
 from config import *
 from os import path
 from .cipher import encrypt
@@ -17,9 +18,9 @@ def readconf():
     try:
         lines = open(CONFIG_FILE_PATH, "r").readlines()
     except KeyboardInterrupt:
-        exit()
+        sys.exit()
     except:
-        prompter.error("文件读取错误")
+        Prompter.error("文件读取错误")
 
     for line in lines:
         if line.strip():
