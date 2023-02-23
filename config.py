@@ -5,7 +5,7 @@ import platform
 # ================================
 
 PROGRAM_NAME = "AutoConnect"
-__version__ = "1.0.0"
+VERSION = "1.0.1"
 CONFIG_FILE_NAME = ".compusnetinfo"
 
 AES_KEY_TEXT = "随便乱输一段文字"
@@ -16,8 +16,10 @@ CONFIG_SAVE_DIR = {
     "Linux": "/{}/".format(getenv("HOME")),
     "Darwin": "/var/"
 }
+
 # ================================
 
+COPYRIGHT_START_YEAR = 2023
 LAUNCH_TIME = datetime.datetime.now()
 OS = platform.system()
 

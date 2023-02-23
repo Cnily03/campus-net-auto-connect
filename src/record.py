@@ -8,7 +8,7 @@ from .cipher import encrypt
 
 
 def parse_int(string: str):
-    return int(''.join([x for x in string if x.isdigit()]))
+    return int('0'+''.join([x for x in string if x.isdigit()]))
 
 
 def readconf():
@@ -28,19 +28,36 @@ def readconf():
     return False
 
 
-def record(save=True):
-    exact_username = input("请输入账号：").strip()
-    password = maskpass.askpass(prompt="请输入密码：", mask="*").strip()
+def saveconf(username, password):
+    open(CONFIG_FILE_PATH, "w").writelines(encrypt(username, password))
+
+
+def select_operator():
+    operators = {
+        1: "telecom",
+        2: "cmcc",
+        3: "unicom"
+    }
     print("请选择运营商：")
     print("   1) 中国电信")
     print("   2) 中国移动")
     print("   3) 中国联通")
-    operator = {
-        1: "telecom",
-        2: "cmcc",
-        3: "unicom"
-    }[parse_int(input("请输入运营商前的数字：").strip())]
+    op_num = 0
+    while op_num < 1 or op_num > len(operators.keys()):
+        op_num = parse_int(input("请输入运营商前的数字："))
+    return operators[op_num]
+
+
+def record(save=True):
+    exact_username = ''
+    password = ''
+    while not exact_username:
+        exact_username = input("请输入账号：").strip()
+    while not password:
+        password = maskpass.askpass(prompt="请输入密码：", mask="*").strip()
+    operator = select_operator()
+
     username = exact_username + "@" + operator
     if save:
-        open(CONFIG_FILE_PATH, "w").writelines(encrypt(username, password))
+        saveconf(username, password)
     return (username, password)

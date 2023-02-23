@@ -5,7 +5,7 @@ PROGRAM_NAME = "AutoConnect"
 directories = ["./src"]
 extensions = [".py"]
 files = ["config.py"]
-modules = ["json", "requests", "psutil", "tkinter", "tkinter.messagebox",
+modules = ["json", "requests", "psutil", "random", "tkinter", "tkinter.messagebox",
            "platform", "maskpass", "Crypto.Cipher.AES"]
 
 options = {
