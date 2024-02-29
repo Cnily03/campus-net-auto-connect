@@ -1,8 +1,8 @@
 import sys
-from src.cipher import decrypt
-from src.logger import Prompter
-from src.record import readconf, record, saveconf
-from src.restful.net import login
+from campus_win.cipher import decrypt
+from campus_win.logger import Prompter
+from campus_win.record import readconf, record, saveconf
+from campus_win.restful.net import login
 
 
 def login_by_record(debug=False):

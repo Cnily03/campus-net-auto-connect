@@ -1,7 +1,7 @@
 from os import path, remove
 from sys import argv
-from src.logger import Prompter
-from src.restful import login_by_record, logout, login_once
+from campus_win.logger import Prompter
+from campus_win.restful import login_by_record, logout, login_once
 from config import *
 
 
@@ -75,7 +75,7 @@ def launch_via_argv():
             "",
             "Copyright {} Cnily03, source code under license MIT".format(
                 ("{}-".format(COPYRIGHT_START_YEAR) if COPYRIGHT_START_YEAR < LAUNCH_TIME.date().year else "") + str(LAUNCH_TIME.date().year)),
-            "See souece code at https://github.com/Cnily03/compus-net-auto-connect"
+            "See souece code at https://github.com/Cnily03/campus-net-auto-connect"
         ]))
 
 

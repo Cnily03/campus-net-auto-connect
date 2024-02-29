@@ -6,7 +6,7 @@ import platform
 
 PROGRAM_NAME = "AutoConnect"
 VERSION = "1.0.1"
-CONFIG_FILE_NAME = ".compusnetinfo"
+CONFIG_FILE_NAME = ".campusnetinfo"
 
 AES_KEY_TEXT = "随便乱输一段文字"
 AES_IV_TEXT = "随便乱输一段文字"

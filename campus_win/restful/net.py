@@ -1,9 +1,9 @@
 import re
 import json
 import requests
-from src.logger import Logger, Prompter
+from campus_win.logger import Logger, Prompter
 from urllib import parse
-from src.restful.net import *
+from campus_win.restful.net import *
 
 
 def login(username: str, password: str):
