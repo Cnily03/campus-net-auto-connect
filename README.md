@@ -21,3 +21,7 @@ python build.py
 ```
 
 出于安全考虑，建议你修改 `config.py` 中的 `AES_KEY_TEXT` 和 `AES_IV_TEXT`
+
+## 关于 Shell 脚本
+
+请参见此 [Gist](https://gist.github.com/Cnily03/1606a05b0265b974f9d5a329ae9b77e5)
